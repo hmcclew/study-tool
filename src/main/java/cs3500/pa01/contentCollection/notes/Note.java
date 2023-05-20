@@ -1,4 +1,4 @@
-package cs3500.pa01.contentCollection;
+package cs3500.pa01.contentCollection.notes;
 
 /**
  * Represents a single line of formatted Markdown text, including the content,

@@ -1,4 +1,4 @@
-package cs3500.pa01.contentCollection;
+package cs3500.pa01.contentCollection.questions;
 
 
 public class EasyQuestion extends AbstractQuestion {

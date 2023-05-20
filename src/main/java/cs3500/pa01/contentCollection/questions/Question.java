@@ -1,4 +1,4 @@
-package cs3500.pa01.contentCollection;
+package cs3500.pa01.contentCollection.questions;
 
 public interface Question {
    String getQuestion();
@@ -6,4 +6,5 @@ public interface Question {
    void changeQuestionDifficulty(QuestionDifficulty updatedDifficulty);
    QuestionDifficulty getQuestionDifficulty();
    void replaceQuestion(AbstractQuestion question);
+   String toString();
 }
