@@ -22,7 +22,8 @@ public class StudySessionController implements Controller {
 
     QuestionCollection qc1 = new QuestionCollection();
     QuestionCollection qc2 = new QuestionCollection();
-    FileReader fr = new FileReader(filePath);
+    FileReader fr = new FileReader();
+    fr.read(filePath);
 
     if (filePath.endsWith(".sr")) {
       fr.createQuestionCollectionFromSr(qc1);

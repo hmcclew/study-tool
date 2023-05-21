@@ -13,12 +13,12 @@ import java.util.Scanner;
 /**
  * A file reader that reads through a file and extracts relevant text
  */
-public class FileReader {
+public class FileReader implements Reader {
   Path path;
   Scanner scanner = null;
   String fileContent = "";
 
-  public FileReader(String p1) {
+  public void read(String p1) {
     path = Path.of(p1);
     try {
       fileContent = Files.readString(path);

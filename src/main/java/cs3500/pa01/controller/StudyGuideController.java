@@ -51,7 +51,8 @@ public class StudyGuideController implements Controller {
     QuestionCollection questionCollection = new QuestionCollection();
 
     for (Path file : fileSorter.getFiles()) {
-      FileReader fileReader = new FileReader(file.toString());
+      FileReader fileReader = new FileReader();
+      fileReader.read(file.toString());
       fileReader.setPath(file);
       fileReader.createContentCollections(noteCollection, questionCollection);
     }
