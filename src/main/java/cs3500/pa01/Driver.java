@@ -2,6 +2,7 @@ package cs3500.pa01;
 
 import cs3500.pa01.controller.Controller;
 import cs3500.pa01.controller.StudyGuideController;
+import cs3500.pa01.controller.StudySessionController;
 
 /**
  * This is the main driver of this project.
@@ -37,6 +38,11 @@ public class Driver {
 
       Controller studyGuideController = new StudyGuideController(directory, orderingFlag, output);
       studyGuideController.run();
+    }
+
+    if (args.length == 0) {
+      Controller studySessionController = new StudySessionController();
+      studySessionController.run();
     }
   }
 }

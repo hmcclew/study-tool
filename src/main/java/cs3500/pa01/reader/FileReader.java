@@ -3,8 +3,8 @@ package cs3500.pa01.reader;
 import cs3500.pa01.contentCollection.QuestionCollection;
 import cs3500.pa01.contentCollection.note.Note;
 import cs3500.pa01.contentCollection.NoteCollection;
+import cs3500.pa01.contentCollection.question.EasyQuestion;
 import cs3500.pa01.contentCollection.question.HardQuestion;
-import cs3500.pa01.contentCollection.question.Question;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,7 +43,7 @@ public class FileReader {
    *
    * @param nc the note collection for which to add each created note
    */
-  public void createNoteCollection(NoteCollection nc, QuestionCollection qc) {
+  public void createContentCollections(NoteCollection nc, QuestionCollection qc) {
     String[] lines = fileContent.split(System.lineSeparator());
     String content = "";
     boolean inBracket = false;
@@ -57,7 +57,7 @@ public class FileReader {
         if (bracketEnd >= 0) {
           content += line.substring(bracketStart + 2, bracketEnd);
           if (content.contains(":::")) {
-            createQuestionCollection(qc, content);
+            createQuestionCollectionFromMD(qc, content);
           } else {
             nc.add(new Note("[[]]", content.trim()));
           }
@@ -70,7 +70,7 @@ public class FileReader {
         if (bracketEnd >= 0) {
           content += line.substring(0, bracketEnd);
           if (content.contains(":::")) {
-            createQuestionCollection(qc, content);
+            createQuestionCollectionFromMD(qc, content);
           } else {
             nc.add(new Note("[[]]", content.trim()));
           }
@@ -91,7 +91,7 @@ public class FileReader {
     }
   }
 
-  public void createQuestionCollection(QuestionCollection qc, String content) {
+  public void createQuestionCollectionFromMD(QuestionCollection qc, String content) {
     int questionSeparatorStart = content.indexOf(":::");
 
     String question = content.substring(0,questionSeparatorStart).trim();
@@ -100,5 +100,26 @@ public class FileReader {
     HardQuestion hq = new HardQuestion(question, answer);
     qc.addToHardQuestions(hq);
     qc.addToQuestionCollection(hq);
+  }
+
+  public void createQuestionCollectionFromSR(QuestionCollection qc) {
+    String[] lines = fileContent.split(System.lineSeparator());
+
+    for (int i = 0; i < lines.length - 1; i++) {
+      String line = lines[i];
+      if (line.startsWith("Q HARD")) {
+        String question = line.substring(line.indexOf(":") + 1).trim();
+        String answer = lines[i + 1].substring(4).trim();
+        HardQuestion hq = new HardQuestion(question, answer);
+        qc.addToQuestionCollection(hq);
+        qc.addToHardQuestions(hq);
+      } else if (line.startsWith("Q EASY")) {
+        String question = line.substring(line.indexOf(":") + 1).trim();
+        String answer = lines[i + 1].substring(4).trim();
+        EasyQuestion eq = new EasyQuestion(question, answer);
+        qc.addToQuestionCollection(eq);
+        qc.addToEasyQuestions(eq);
+      }
+    }
   }
 }

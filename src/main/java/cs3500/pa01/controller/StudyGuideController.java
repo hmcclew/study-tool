@@ -52,7 +52,7 @@ public class StudyGuideController implements Controller {
     for (Path file : fileSorter.getFiles()) {
       FileReader fileReader = new FileReader(file.toString());
       fileReader.setPath(file);
-      fileReader.createNoteCollection(noteCollection, questionCollection);
+      fileReader.createContentCollections(noteCollection, questionCollection);
     }
 
     FileWriter markDownWriter = new MarkDownWriter();

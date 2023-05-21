@@ -97,6 +97,15 @@ public class QuestionCollection implements ContentCollection {
   }
 
   /**
+   * Adds a question to this instance's easyQuestions
+   *
+   * @param q the question to be added
+   */
+  public void addToEasyQuestions(EasyQuestion q) {
+    easyQuestions.add(q);
+  }
+
+  /**
    * Converts the content of this QuestionCollection to a single string
    *
    * @return the new string of this QuestionCollection's content
