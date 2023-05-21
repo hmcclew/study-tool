@@ -1,7 +1,6 @@
 package cs3500.pa01.contentCollection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import cs3500.pa01.contentCollection.question.EasyQuestion;
 import cs3500.pa01.contentCollection.question.HardQuestion;

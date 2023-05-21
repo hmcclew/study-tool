@@ -22,7 +22,7 @@ public class QuestionCollection implements ContentCollection {
                             ArrayList<EasyQuestion> easyQuestions, int numQuestions) {
     this.hardQuestions = hardQuestions;
     this.easyQuestions = easyQuestions;
-    this.createQuestionCollection(numQuestions);
+    this.makeQuestionCollection(numQuestions);
   }
 
   public void changeQuestionDifficulty(AbstractQuestion q) {
@@ -37,7 +37,7 @@ public class QuestionCollection implements ContentCollection {
     }
   }
 
-  public void createQuestionCollection(int numQuestions) {
+  public void makeQuestionCollection(int numQuestions) {
     Collections.shuffle(hardQuestions);
     Collections.shuffle(easyQuestions);
 

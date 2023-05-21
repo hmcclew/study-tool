@@ -6,7 +6,6 @@ import cs3500.pa01.fileWriter.FileWriter;
 import cs3500.pa01.fileWriter.MarkDownWriter;
 import cs3500.pa01.fileWriter.SRWriter;
 import cs3500.pa01.reader.FileReader;
-import cs3500.pa01.reader.Reader;
 import cs3500.pa01.sorter.FileSorter;
 import cs3500.pa01.sorter.Sorter;
 import cs3500.pa01.visitor.FileVisitor;
