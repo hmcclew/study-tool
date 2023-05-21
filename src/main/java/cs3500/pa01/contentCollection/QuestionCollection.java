@@ -25,6 +25,14 @@ public class QuestionCollection implements ContentCollection {
     this.makeQuestionCollection(numQuestions);
   }
 
+  public int numEasyQuestions() {
+    return easyQuestions.size();
+  }
+
+  public int numHardQuestions() {
+    return hardQuestions.size();
+  }
+
   public void changeQuestionDifficulty(AbstractQuestion q) {
     if (q.questionDifficulty.equals(QuestionDifficulty.HARD)) {
       EasyQuestion updatedQuestion = new EasyQuestion(q.questionText, q.answer);
