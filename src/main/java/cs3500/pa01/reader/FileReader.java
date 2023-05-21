@@ -94,7 +94,7 @@ public class FileReader {
   public void createQuestionCollectionFromMD(QuestionCollection qc, String content) {
     int questionSeparatorStart = content.indexOf(":::");
 
-    String question = content.substring(0,questionSeparatorStart).trim();
+    String question = content.substring(0, questionSeparatorStart).trim();
     String answer = content.substring(questionSeparatorStart + 3).trim();
 
     HardQuestion hq = new HardQuestion(question, answer);
@@ -102,7 +102,7 @@ public class FileReader {
     qc.addToQuestionCollection(hq);
   }
 
-  public void createQuestionCollectionFromSR(QuestionCollection qc) {
+  public void createQuestionCollectionFromSr(QuestionCollection qc) {
     String[] lines = fileContent.split(System.lineSeparator());
 
     for (int i = 0; i < lines.length - 1; i++) {

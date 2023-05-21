@@ -5,7 +5,8 @@ public abstract class AbstractQuestion implements Question {
   public String answer;
   public QuestionDifficulty questionDifficulty;
 
-  public AbstractQuestion(String questionText, String answer, QuestionDifficulty questionDifficulty) {
+  public AbstractQuestion(String questionText, String answer,
+                          QuestionDifficulty questionDifficulty) {
     this.questionText = questionText;
     this.answer = answer;
     this.questionDifficulty = questionDifficulty;
@@ -27,7 +28,8 @@ public abstract class AbstractQuestion implements Question {
   }
 
   public String toString() {
-    return "Q " + this.questionDifficulty + ": " + this.questionText +
+    return "Q " + this.questionDifficulty + ": " + this.questionText
+        +
         "\n A: " + this.answer + "\n\n";
   }
 }

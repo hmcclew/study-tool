@@ -13,15 +13,15 @@ public class StudySessionController implements Controller {
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("Welcome to Spaced Repetition!");
-    System.out.println("Please provide a path to an .sr file" +
-        " with questions you would like to study");
+    System.out.println("Please provide a path to an .sr file"
+        + " with questions you would like to study");
     String filePath = scanner.nextLine();
 
     QuestionCollection qc = new QuestionCollection();
 
     if (filePath.endsWith(".sr")) {
       FileReader fr = new FileReader(filePath);
-      fr.createQuestionCollectionFromSR(qc);
+      fr.createQuestionCollectionFromSr(qc);
     } else {
       System.out.println("Please ensure the path leads to an .sr file");
       scanner.nextLine();

@@ -7,7 +7,7 @@ import cs3500.pa01.updater.SessionStatisticsUpdater;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class InputReader {
+public class InputReader implements Reader {
   private AbstractQuestion currentQuestion;
   private QuestionCollection questionCollection;
 
@@ -26,6 +26,7 @@ public class InputReader {
     return statisticsUpdater.printStatistics();
   }
 
+  @Override
   public void read(String userInput) {
     Scanner scanner = new Scanner(System.in);
 
@@ -38,8 +39,7 @@ public class InputReader {
       statisticsUpdater.incrementHardToEasy();
       statisticsUpdater.decreaseNumHard();
       statisticsUpdater.increaseNumEasy();
-    }
-    else if (userInput.trim().equals(UserInput.TWO.getValue())
+    } else if (userInput.trim().equals(UserInput.TWO.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.EASY)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
@@ -48,14 +48,11 @@ public class InputReader {
       statisticsUpdater.incrementEasyToHard();
       statisticsUpdater.increaseNumHard();
       statisticsUpdater.decreaseNumEasy();
-    }
-    else if (userInput.trim().equals(UserInput.THREE.getValue())) {
+    } else if (userInput.trim().equals(UserInput.THREE.getValue())) {
       System.out.println("Answer: " + currentQuestion.getAnswer());
-    }
-    else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
+    } else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
       System.exit(0);
-    }
-    else {
+    } else {
       String nextLine = scanner.nextLine();
       read(nextLine);
     }

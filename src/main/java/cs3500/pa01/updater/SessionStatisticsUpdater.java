@@ -25,12 +25,13 @@ public class SessionStatisticsUpdater {
   }
 
   public String printStatistics() {
-    return "You answered " + numAnswered + " questions. \n" +
-        easyToHard + " questions went from easy to hard. \n" +
-        hardToEasy + " questions went from hard to easy. \n"
+    return "You answered " + numAnswered + " questions. \n"
+        + easyToHard + " questions went from easy to hard. \n"
+        + hardToEasy + " questions went from hard to easy. \n"
         + "There are now " + numEasy + " easy questions. \n"
         + "There are now " + numHard + " hard questions. \n";
   }
+
   public void incrementHardToEasy() {
     hardToEasy++;
   }

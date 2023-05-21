@@ -17,7 +17,9 @@ public class QuestionCollection implements ContentCollection {
   protected ArrayList<HardQuestion> hardQuestions = new ArrayList<>();
   protected ArrayList<EasyQuestion> easyQuestions = new ArrayList<>();
 
-  public QuestionCollection() {};
+  public QuestionCollection() {
+  }
+
   public QuestionCollection(ArrayList<HardQuestion> hardQuestions,
                             ArrayList<EasyQuestion> easyQuestions, int numQuestions) {
     this.hardQuestions = hardQuestions;
@@ -114,8 +116,8 @@ public class QuestionCollection implements ContentCollection {
   public String toString() {
     StringBuilder s = new StringBuilder();
     for (AbstractQuestion q : this.questionCollection) {
-        s.append(q);
-      }
+      s.append(q);
+    }
     return s.toString();
   }
 }

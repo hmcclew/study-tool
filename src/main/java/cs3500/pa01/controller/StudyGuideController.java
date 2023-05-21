@@ -33,6 +33,7 @@ public class StudyGuideController implements Controller {
     this.orderingFlag = Objects.requireNonNull(orderingFlag);
     this.outputPath = Objects.requireNonNull(outputPath);
   }
+
   public void run() {
     Path directoryPath = Paths.get(inputPath);
     FileVisitor fileVisitor = new FileVisitor();
