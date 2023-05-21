@@ -18,6 +18,9 @@ public class InputReader implements Reader {
     this.statisticsUpdater = new SessionStatisticsUpdater(questionCollection);
   }
 
+  public QuestionCollection getQuestionCollection() {
+    return questionCollection;
+  }
   public void setCurrentQuestion(AbstractQuestion q) {
     this.currentQuestion = q;
   }
@@ -52,6 +55,7 @@ public class InputReader implements Reader {
       System.out.println("Answer: " + currentQuestion.getAnswer());
     } else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
       System.exit(0);
+      statisticsUpdater.printStatistics();
     } else {
       String nextLine = scanner.nextLine();
       read(nextLine);

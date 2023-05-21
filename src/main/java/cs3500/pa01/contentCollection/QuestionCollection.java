@@ -6,7 +6,8 @@ import cs3500.pa01.contentCollection.question.HardQuestion;
 import cs3500.pa01.contentCollection.question.QuestionDifficulty;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents a collection of questions
@@ -27,8 +28,36 @@ public class QuestionCollection implements ContentCollection {
     this.makeQuestionCollection(numQuestions);
   }
 
+  public QuestionCollection(ArrayList<HardQuestion> hardQuestions,
+                            ArrayList<EasyQuestion> easyQuestions) {
+    this.hardQuestions = hardQuestions;
+    this.easyQuestions = easyQuestions;
+    this.makeQuestionCollection(hardQuestions.size() + easyQuestions.size());
+  }
+
+  public void updateCollection(ArrayList<AbstractQuestion> qc) {
+    Set<String> uniqueQuestions = new HashSet<>();
+
+    for (AbstractQuestion q : questionCollection) {
+      uniqueQuestions.add(q.getQuestion());
+    }
+    for (AbstractQuestion q : qc) {
+      if (!uniqueQuestions.contains(q.getQuestion())) {
+        questionCollection.add(q);
+      }
+    }
+  }
+
   public ArrayList<AbstractQuestion> getQuestionCollection() {
     return this.questionCollection;
+  }
+
+  public ArrayList<HardQuestion> getHardQuestions() {
+    return this.hardQuestions;
+  }
+
+  public ArrayList<EasyQuestion> getEasyQuestions() {
+    return this.easyQuestions;
   }
 
   public int numEasyQuestions() {

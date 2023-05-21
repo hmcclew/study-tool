@@ -2,9 +2,12 @@ package cs3500.pa01.controller;
 
 import cs3500.pa01.contentCollection.QuestionCollection;
 import cs3500.pa01.contentCollection.question.AbstractQuestion;
+import cs3500.pa01.fileWriter.FileWriter;
+import cs3500.pa01.fileWriter.SRWriter;
 import cs3500.pa01.reader.FileReader;
 import cs3500.pa01.reader.InputReader;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class StudySessionController implements Controller {
@@ -17,11 +20,12 @@ public class StudySessionController implements Controller {
         + " with questions you would like to study");
     String filePath = scanner.nextLine();
 
-    QuestionCollection qc = new QuestionCollection();
+    QuestionCollection qc1 = new QuestionCollection();
+    QuestionCollection qc2 = new QuestionCollection();
+    FileReader fr = new FileReader(filePath);
 
     if (filePath.endsWith(".sr")) {
-      FileReader fr = new FileReader(filePath);
-      fr.createQuestionCollectionFromSr(qc);
+      fr.createQuestionCollectionFromSr(qc1);
     } else {
       System.out.println("Please ensure the path leads to an .sr file");
       scanner.nextLine();
@@ -30,12 +34,12 @@ public class StudySessionController implements Controller {
     System.out.println("Great! How many questions would you like to study?");
     int numQuestionsToStudy = scanner.nextInt();
     scanner.nextLine();
-    qc.makeQuestionCollection(numQuestionsToStudy);
+    qc1.makeQuestionCollection(numQuestionsToStudy);
     System.out.println("Great! Let's begin" + "\n");
 
-    InputReader inputReader = new InputReader(qc);
+    InputReader inputReader = new InputReader(qc1);
 
-    for (AbstractQuestion question : qc.getQuestionCollection()) {
+    for (AbstractQuestion question : qc1.getQuestionCollection()) {
       inputReader.setCurrentQuestion(question);
       System.out.println(question.getQuestionDifficulty() + ": " + question.getQuestion() + "\n");
       System.out.println("Please enter the corresponding number for what you'd like to do");
@@ -51,6 +55,15 @@ public class StudySessionController implements Controller {
 
     System.out.println(inputReader.printStatistics());
 
+    fr.createQuestionCollectionFromSr(qc2);
+    QuestionCollection updatedQuestions = inputReader.getQuestionCollection();
+    QuestionCollection updatedQuestionCollection =
+        new QuestionCollection(updatedQuestions.getHardQuestions(),
+        updatedQuestions.getEasyQuestions());
+    updatedQuestionCollection.updateCollection(qc2.getQuestionCollection());
+    FileWriter fileWriter = new SRWriter();
+    filePath = filePath.substring(0, filePath.indexOf(".sr"));
+    fileWriter.writeToFile(Path.of(filePath), updatedQuestionCollection.toString());
   }
 
 }
