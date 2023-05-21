@@ -13,10 +13,11 @@ import java.util.Random;
  */
 public class QuestionCollection implements ContentCollection {
 
-  public ArrayList<AbstractQuestion> questionCollection = new ArrayList<>();
-  public ArrayList<HardQuestion> hardQuestions;
-  public ArrayList<EasyQuestion> easyQuestions;
+  protected ArrayList<AbstractQuestion> questionCollection = new ArrayList<>();
+  protected ArrayList<HardQuestion> hardQuestions = new ArrayList<>();
+  protected ArrayList<EasyQuestion> easyQuestions = new ArrayList<>();
 
+  public QuestionCollection() {};
   public QuestionCollection(ArrayList<HardQuestion> hardQuestions,
                             ArrayList<EasyQuestion> easyQuestions, int numQuestions) {
     this.hardQuestions = hardQuestions;
@@ -39,6 +40,7 @@ public class QuestionCollection implements ContentCollection {
   public void createQuestionCollection(int numQuestions) {
     Collections.shuffle(hardQuestions);
     Collections.shuffle(easyQuestions);
+
     questionCollection.clear();
 
     Random random = new Random();
@@ -64,9 +66,26 @@ public class QuestionCollection implements ContentCollection {
    * @param index the index of the question to be returned
    * @return the question at the given index of questionCollection
    */
-  @Override
-  public AbstractQuestion get(int index) {
+  public AbstractQuestion getQuestion(int index) {
     return questionCollection.get(index);
+  }
+
+  /**
+   * Adds a question to this instance's questionCollection
+   *
+   * @param q the question to be added
+   */
+  public void addToQuestionCollection(AbstractQuestion q) {
+    questionCollection.add(q);
+  }
+
+  /**
+   * Adds a question to this instance's hardQuestions
+   *
+   * @param q the question to be added
+   */
+  public void addToHardQuestions(HardQuestion q) {
+    hardQuestions.add(q);
   }
 
   /**

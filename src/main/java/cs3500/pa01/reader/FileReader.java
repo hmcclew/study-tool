@@ -1,7 +1,10 @@
 package cs3500.pa01.reader;
 
+import cs3500.pa01.contentCollection.QuestionCollection;
 import cs3500.pa01.contentCollection.note.Note;
 import cs3500.pa01.contentCollection.NoteCollection;
+import cs3500.pa01.contentCollection.question.HardQuestion;
+import cs3500.pa01.contentCollection.question.Question;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,23 +13,19 @@ import java.util.Scanner;
 /**
  * A file reader that reads through a file and extracts relevant text
  */
-public class FileReader implements Reader {
+public class FileReader {
   Path path;
   Scanner scanner = null;
   String fileContent = "";
 
-  FileReader(String p1) {
+  public FileReader(String p1) {
     path = Path.of(p1);
-  }
-
-  public String read() {
     try {
       fileContent = Files.readString(path);
       scanner = new Scanner(fileContent);
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return fileContent;
   }
 
   /**
@@ -44,7 +43,7 @@ public class FileReader implements Reader {
    *
    * @param nc the note collection for which to add each created note
    */
-  public void createNoteCollection(NoteCollection nc) {
+  public void createNoteCollection(NoteCollection nc, QuestionCollection qc) {
     String[] lines = fileContent.split(System.lineSeparator());
     String content = "";
     boolean inBracket = false;
@@ -57,7 +56,11 @@ public class FileReader implements Reader {
         inBracket = true;
         if (bracketEnd >= 0) {
           content += line.substring(bracketStart + 2, bracketEnd);
-          nc.add(new Note("[[]]", content.trim()));
+          if (content.contains(":::")) {
+            createQuestionCollection(qc, content);
+          } else {
+            nc.add(new Note("[[]]", content.trim()));
+          }
           content = "";
           inBracket = false;
         } else {
@@ -66,7 +69,11 @@ public class FileReader implements Reader {
       } else if (inBracket) {
         if (bracketEnd >= 0) {
           content += line.substring(0, bracketEnd);
-          nc.add(new Note("[[]]", content.trim()));
+          if (content.contains(":::")) {
+            createQuestionCollection(qc, content);
+          } else {
+            nc.add(new Note("[[]]", content.trim()));
+          }
           content = "";
           inBracket = false;
         }
@@ -82,5 +89,16 @@ public class FileReader implements Reader {
         }
       }
     }
+  }
+
+  public void createQuestionCollection(QuestionCollection qc, String content) {
+    int questionSeparatorStart = content.indexOf(":::");
+
+    String question = content.substring(0,questionSeparatorStart).trim();
+    String answer = content.substring(questionSeparatorStart + 3).trim();
+
+    HardQuestion hq = new HardQuestion(question, answer);
+    qc.addToHardQuestions(hq);
+    qc.addToQuestionCollection(hq);
   }
 }

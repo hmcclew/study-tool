@@ -12,7 +12,7 @@ public class FileSorter implements Sorter {
 
   ArrayList<Path> files = new ArrayList<>();
 
-  FileSorter(ArrayList<Path> files) {
+  public FileSorter(ArrayList<Path> files) {
     this.files = files;
   }
 

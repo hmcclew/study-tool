@@ -25,8 +25,7 @@ public class NoteCollection implements ContentCollection {
    * @param index the index of the note to be returned
    * @return the note at the given index of noteCollection
    */
-  @Override
-  public Note get(int index) {
+  public Note getNote(int index) {
     return noteCollection.get(index);
   }
 
