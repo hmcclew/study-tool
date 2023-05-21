@@ -1,6 +1,6 @@
 package cs3500.pa01.contentCollection;
 
-import cs3500.pa01.contentCollection.notes.Note;
+import cs3500.pa01.contentCollection.note.Note;
 import java.util.ArrayList;
 
 /**

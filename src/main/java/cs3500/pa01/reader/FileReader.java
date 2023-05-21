@@ -1,6 +1,6 @@
 package cs3500.pa01.reader;
 
-import cs3500.pa01.contentCollection.notes.Note;
+import cs3500.pa01.contentCollection.note.Note;
 import cs3500.pa01.contentCollection.NoteCollection;
 import java.io.IOException;
 import java.nio.file.Files;
