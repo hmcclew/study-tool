@@ -25,6 +25,10 @@ public class QuestionCollection implements ContentCollection {
     this.makeQuestionCollection(numQuestions);
   }
 
+  public ArrayList<AbstractQuestion> getQuestionCollection() {
+    return this.questionCollection;
+  }
+
   public int numEasyQuestions() {
     return easyQuestions.size();
   }
@@ -51,13 +55,8 @@ public class QuestionCollection implements ContentCollection {
 
     questionCollection.clear();
 
-    Random random = new Random();
-
-    int remainingQuestions = numQuestions;
-    int numHardQuestions = Math.min(random.nextInt(remainingQuestions + 1),
-        hardQuestions.size());
-    remainingQuestions -= numHardQuestions;
-    int numEasyQuestions = Math.min(remainingQuestions, easyQuestions.size());
+    int numHardQuestions = Math.min(numQuestions, hardQuestions.size());
+    int numEasyQuestions = Math.min(numQuestions - numHardQuestions, easyQuestions.size());
 
     for (int i = 0; i < numHardQuestions; i++) {
       questionCollection.add(hardQuestions.get(i));
@@ -67,6 +66,7 @@ public class QuestionCollection implements ContentCollection {
       questionCollection.add(easyQuestions.get(i));
     }
   }
+
 
   /**
    * Gets the question in this instance's questionCollection at the given index

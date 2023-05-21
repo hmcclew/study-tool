@@ -10,10 +10,10 @@ public enum UserInput {
   THREE("3"),
   FOUR("4");
 
-  private String input;
+  private String value;
 
-  UserInput(String input) {
-    this.input = input;
+  UserInput(String value) {
+    this.value = value;
   }
 
   /**
@@ -21,7 +21,7 @@ public enum UserInput {
    *
    * @return the string of the matching input
    */
-  public String getInput() {
-    return input;
+  public String getValue() {
+    return value;
   }
 }

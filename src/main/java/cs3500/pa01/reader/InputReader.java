@@ -7,15 +7,13 @@ import cs3500.pa01.updater.SessionStatisticsUpdater;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class InputReader implements Reader {
-  private final Readable readable;
+public class InputReader {
   private AbstractQuestion currentQuestion;
   private QuestionCollection questionCollection;
 
   private SessionStatisticsUpdater statisticsUpdater;
 
-  public InputReader(Readable readable, QuestionCollection qc) {
-    this.readable = Objects.requireNonNull(readable);
+  public InputReader(QuestionCollection qc) {
     this.questionCollection = Objects.requireNonNull(qc);
     this.statisticsUpdater = new SessionStatisticsUpdater(questionCollection);
   }
@@ -24,12 +22,9 @@ public class InputReader implements Reader {
     this.currentQuestion = q;
   }
 
-  @Override
-  public void read() {
-    Scanner scanner = new Scanner(readable);
-    String userInput = scanner.nextLine();
+  public void read(String userInput) {
 
-    if (userInput.equals(UserInput.ONE)
+    if (userInput.equals(UserInput.ONE.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.HARD)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
@@ -39,7 +34,7 @@ public class InputReader implements Reader {
       statisticsUpdater.decreaseNumHard();
       statisticsUpdater.increaseNumEasy();
     }
-    else if (userInput.equals(UserInput.TWO)
+    else if (userInput.equals(UserInput.TWO.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.EASY)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
@@ -49,10 +44,10 @@ public class InputReader implements Reader {
       statisticsUpdater.increaseNumHard();
       statisticsUpdater.decreaseNumEasy();
     }
-    else if (userInput.equals(UserInput.THREE)) {
-      System.out.println(currentQuestion.getAnswer());
+    else if (userInput.trim().equals(UserInput.THREE.getValue())) {
+      System.out.println("Answer: " + currentQuestion.getAnswer());
     }
-    else if (userInput.equals(UserInput.FOUR)) {
+    else if (userInput.equals(UserInput.FOUR.getValue())) {
       System.exit(0);
     }
   }
