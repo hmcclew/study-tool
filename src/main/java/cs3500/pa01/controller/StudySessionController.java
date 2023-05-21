@@ -45,11 +45,12 @@ public class StudySessionController implements Controller {
       System.out.println("4. Exit Application");
 
       String userInput = scanner.nextLine();
-
       inputReader.read(userInput);
-
       System.out.println();
     }
+
+    System.out.println(inputReader.printStatistics());
+
   }
 
 }

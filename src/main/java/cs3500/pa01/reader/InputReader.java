@@ -22,9 +22,14 @@ public class InputReader {
     this.currentQuestion = q;
   }
 
-  public void read(String userInput) {
+  public String printStatistics() {
+    return statisticsUpdater.printStatistics();
+  }
 
-    if (userInput.equals(UserInput.ONE.getValue())
+  public void read(String userInput) {
+    Scanner scanner = new Scanner(System.in);
+
+    if (userInput.trim().equals(UserInput.ONE.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.HARD)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
@@ -34,7 +39,7 @@ public class InputReader {
       statisticsUpdater.decreaseNumHard();
       statisticsUpdater.increaseNumEasy();
     }
-    else if (userInput.equals(UserInput.TWO.getValue())
+    else if (userInput.trim().equals(UserInput.TWO.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.EASY)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
@@ -47,8 +52,12 @@ public class InputReader {
     else if (userInput.trim().equals(UserInput.THREE.getValue())) {
       System.out.println("Answer: " + currentQuestion.getAnswer());
     }
-    else if (userInput.equals(UserInput.FOUR.getValue())) {
+    else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
       System.exit(0);
+    }
+    else {
+      String nextLine = scanner.nextLine();
+      read(nextLine);
     }
   }
 }
