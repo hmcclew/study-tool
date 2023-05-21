@@ -46,18 +46,13 @@ public class SessionStatisticsUpdater {
 
   public void increaseNumHard() {
     numHard++;
-  }
-
-  public void decreaseNumHard() {
-    numHard--;
+    numEasy--;
   }
 
   public void increaseNumEasy() {
     numEasy++;
+    numHard--;
   }
 
-  public void decreaseNumEasy() {
-    numEasy--;
-  }
 
 }

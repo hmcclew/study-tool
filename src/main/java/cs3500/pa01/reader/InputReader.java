@@ -21,6 +21,7 @@ public class InputReader implements Reader {
   public QuestionCollection getQuestionCollection() {
     return questionCollection;
   }
+
   public void setCurrentQuestion(AbstractQuestion q) {
     this.currentQuestion = q;
   }
@@ -37,20 +38,18 @@ public class InputReader implements Reader {
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.HARD)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
-      System.out.println("Question now marked as easy");
+      System.out.println("\nQuestion now marked as easy");
       statisticsUpdater.incrementNumAnswered();
       statisticsUpdater.incrementHardToEasy();
-      statisticsUpdater.decreaseNumHard();
       statisticsUpdater.increaseNumEasy();
     } else if (userInput.trim().equals(UserInput.TWO.getValue())
         &&
         currentQuestion.getQuestionDifficulty().equals(QuestionDifficulty.EASY)) {
       questionCollection.changeQuestionDifficulty(currentQuestion);
-      System.out.println("Question now marked as hard");
+      System.out.println("\nQuestion now marked as hard");
       statisticsUpdater.incrementNumAnswered();
       statisticsUpdater.incrementEasyToHard();
       statisticsUpdater.increaseNumHard();
-      statisticsUpdater.decreaseNumEasy();
     } else if (userInput.trim().equals(UserInput.THREE.getValue())) {
       System.out.println("Answer: " + currentQuestion.getAnswer());
     } else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
