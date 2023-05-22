@@ -8,6 +8,7 @@ import cs3500.pa01.contentcollection.question.HardQuestion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class InputReaderTest {
 
@@ -28,6 +29,7 @@ class InputReaderTest {
     ip = new InputReader(qc);
   }
 
+  @Test
   public void testReader() {
     assertEquals(2, qc.numEasyQuestions());
     assertEquals(2, qc.numHardQuestions());
@@ -45,6 +47,14 @@ class InputReaderTest {
     assertEquals(2, qc.numHardQuestions());
 
     assertEquals(qc, ip.getQuestionCollection());
+
+    ip.setCurrentQuestion(qc.getQuestionCollection().get(1));
+    ip.read(UserInput.THREE.getValue());
+
+    String statistics = ip.printStatistics();
+
+    assertTrue(statistics.contains("1 questions went from easy to hard."));
+    assertTrue(statistics.contains("1 questions went from hard to easy."));
   }
 
 }
