@@ -2,12 +2,12 @@ package cs3500.pa01.controller;
 
 import cs3500.pa01.contentcollection.NoteCollection;
 import cs3500.pa01.contentcollection.QuestionCollection;
+import cs3500.pa01.filesorter.FileSorter;
+import cs3500.pa01.filesorter.Sorter;
 import cs3500.pa01.filewriter.FileWriter;
 import cs3500.pa01.filewriter.MarkDownWriter;
 import cs3500.pa01.filewriter.SrWriter;
-import cs3500.pa01.filesorter.FileSorter;
 import cs3500.pa01.reader.FileReader;
-import cs3500.pa01.filesorter.Sorter;
 import cs3500.pa01.visitor.FileVisitor;
 import java.io.IOException;
 import java.nio.file.Files;

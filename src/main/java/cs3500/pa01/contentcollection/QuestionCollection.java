@@ -156,16 +156,6 @@ public class QuestionCollection implements ContentCollection {
   }
 
   /**
-   * Gets the question in this instance's questionCollection at the given index
-   *
-   * @param index the index of the question to be returned
-   * @return the question at the given index of questionCollection
-   */
-  public AbstractQuestion getQuestion(int index) {
-    return questionCollection.get(index);
-  }
-
-  /**
    * Adds a question to this instance's questionCollection
    *
    * @param q the question to be added
