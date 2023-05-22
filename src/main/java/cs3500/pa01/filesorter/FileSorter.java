@@ -1,4 +1,4 @@
-package cs3500.pa01.sorter;
+package cs3500.pa01.filesorter;
 
 import java.nio.file.Path;
 import java.util.ArrayList;

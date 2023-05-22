@@ -1,4 +1,4 @@
-package cs3500.pa01.sorter;
+package cs3500.pa01.filesorter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -18,6 +18,11 @@ public class FileReader implements Reader {
   Scanner scanner = null;
   String fileContent = "";
 
+  /**
+   * reads the content of a file and converts it to a string
+   *
+   * @param p1 the string version of the path to be read
+   */
   public void read(String p1) {
     path = Path.of(p1);
     try {
@@ -38,10 +43,10 @@ public class FileReader implements Reader {
   }
 
   /**
-   * Edits a NoteCollection to include all Notes of the p field
-   * in the correct format
+   * creates appropriate ContentCollections based on an .md file's content
    *
-   * @param nc the note collection for which to add each created note
+   * @param nc the note collection to be added to
+   * @param qc the question collection to be added to
    */
   public void createContentCollections(NoteCollection nc, QuestionCollection qc) {
     String[] lines = fileContent.split(System.lineSeparator());
@@ -91,6 +96,12 @@ public class FileReader implements Reader {
     }
   }
 
+  /**
+   * Creates a question collection from an .md file
+   *
+   * @param qc the question collection to add the question to
+   * @param content the content to be formatted to a question
+   */
   public void createQuestionCollectionFromMd(QuestionCollection qc, String content) {
     int questionSeparatorStart = content.indexOf(":::");
 
@@ -102,6 +113,11 @@ public class FileReader implements Reader {
     qc.addToQuestionCollection(hq);
   }
 
+  /**
+   * creates a question collection from a properly formatted .sr file
+   *
+   * @param qc the question collection to add the question to
+   */
   public void createQuestionCollectionFromSr(QuestionCollection qc) {
     String[] lines = fileContent.split(System.lineSeparator());
 

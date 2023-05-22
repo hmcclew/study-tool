@@ -14,6 +14,11 @@ public class SessionStatisticsUpdater {
   private int numEasy;
   private QuestionCollection qc;
 
+  /**
+   * Constructor for a session statistics updater
+   *
+   * @param qc the question collection being used during a session
+   */
   public SessionStatisticsUpdater(QuestionCollection qc) {
     this.qc = qc;
     this.hardToEasy = 0;
@@ -23,6 +28,12 @@ public class SessionStatisticsUpdater {
     this.numHard = qc.numHardQuestions();
   }
 
+  /**
+   * Formats the session statistics to be displayed to a user
+   *
+   * @return the final string of session statistics to be displayed to the user
+   * at the end of a session
+   */
   public String printStatistics() {
     return "You answered " + numAnswered + " questions. \n"
         + easyToHard + " questions went from easy to hard. \n"
@@ -31,23 +42,38 @@ public class SessionStatisticsUpdater {
         + "There are now " + numHard + " hard questions. \n";
   }
 
+  /**
+   * increments the number of questions that change from hard to easy
+   */
   public void incrementHardToEasy() {
     hardToEasy++;
   }
 
+  /**
+   * increments the number of questions that change from easy to hard
+   */
   public void incrementEasyToHard() {
     easyToHard++;
   }
 
+  /**
+   * increments the number of questions that the user answers
+   */
   public void incrementNumAnswered() {
     numAnswered++;
   }
 
+  /**
+   * updates question counts when a question is marked as hard
+   */
   public void increaseNumHard() {
     numHard++;
     numEasy--;
   }
 
+  /**
+   * updates question counts when a question is marked as easy
+   */
   public void increaseNumEasy() {
     numEasy++;
     numHard--;

@@ -16,7 +16,7 @@ public class StudySessionController implements Controller {
     SessionSetupWriter sessionSetup = new SessionSetupWriter();
     sessionSetup.write();
 
-    InSessionWriter inSessionWriter = new InSessionWriter(sessionSetup.qc1, sessionSetup.qc2);
+    InSessionWriter inSessionWriter = new InSessionWriter(sessionSetup.qc1);
     inSessionWriter.write();
 
     PostSessionWriter postSessionWriter = new PostSessionWriter(sessionSetup.qc1, sessionSetup.qc2,

@@ -5,20 +5,27 @@ import cs3500.pa01.contentcollection.question.AbstractQuestion;
 import cs3500.pa01.reader.InputReader;
 import java.util.Scanner;
 
+/**
+ * Handles Writing to the user during a Study Session
+ */
 public class InSessionWriter implements Writer {
-
-  public QuestionCollection qc1;
-  public QuestionCollection qc2;
-
+  protected QuestionCollection qc1;
   public InputReader inputReader;
 
-
-  public InSessionWriter(QuestionCollection qc1, QuestionCollection qc2) {
+  /**
+   * Constructor for an InSessionWriter
+   *
+   * @param qc1 the question collection displayed to a user
+   */
+  public InSessionWriter(QuestionCollection qc1) {
     this.qc1 = qc1;
-    this.qc2 = qc2;
     this.inputReader  = new InputReader(qc1);
   }
 
+  /**
+   * Writes individual questions to the user and calls the input reader
+   * based on each response
+   */
   public void write() {
     Scanner scanner = new Scanner(System.in);
 

@@ -7,15 +7,23 @@ import cs3500.pa01.reader.FileReader;
 import cs3500.pa01.reader.InputReader;
 import java.nio.file.Path;
 
+/**
+ * Writes Post Session Results and Writes updates to Question File
+ */
 public class PostSessionWriter implements Writer {
-
   public QuestionCollection qc1;
   public QuestionCollection qc2;
-
   public String filePath;
-
   public InputReader inputReader;
 
+  /**
+   * Constructor for post session writer
+   *
+   * @param qc1 the question collection used and updated throughout the session
+   * @param qc2 the initial question collection representing the entire file
+   * @param filePath the filepath for the output file
+   * @param inputReader the input reader that has read all user inputs to track statistics
+   */
   public PostSessionWriter(QuestionCollection qc1, QuestionCollection qc2, String filePath,
                            InputReader inputReader) {
     this.qc1 = qc1;
@@ -24,6 +32,10 @@ public class PostSessionWriter implements Writer {
     this.inputReader = inputReader;
   }
 
+  /**
+   * Writes session statistics to the terminal and updated questions to the
+   * initial .sr file
+   */
   public void write() {
     System.out.println(inputReader.printStatistics());
     FileReader fr = new FileReader();
