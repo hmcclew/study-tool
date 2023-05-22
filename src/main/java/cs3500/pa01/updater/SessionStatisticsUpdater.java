@@ -1,7 +1,6 @@
 package cs3500.pa01.updater;
 
-import cs3500.pa01.contentCollection.QuestionCollection;
-import cs3500.pa01.contentCollection.question.Question;
+import cs3500.pa01.contentcollection.QuestionCollection;
 
 /**
  * Class that keeps track of all statistics

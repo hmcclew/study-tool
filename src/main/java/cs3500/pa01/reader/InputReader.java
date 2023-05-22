@@ -1,8 +1,8 @@
 package cs3500.pa01.reader;
 
-import cs3500.pa01.contentCollection.QuestionCollection;
-import cs3500.pa01.contentCollection.question.AbstractQuestion;
-import cs3500.pa01.contentCollection.question.QuestionDifficulty;
+import cs3500.pa01.contentcollection.QuestionCollection;
+import cs3500.pa01.contentcollection.question.AbstractQuestion;
+import cs3500.pa01.contentcollection.question.QuestionDifficulty;
 import cs3500.pa01.updater.SessionStatisticsUpdater;
 import java.util.Objects;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
 package cs3500.pa01.reader;
 
-import cs3500.pa01.contentCollection.QuestionCollection;
-import cs3500.pa01.contentCollection.note.Note;
-import cs3500.pa01.contentCollection.NoteCollection;
-import cs3500.pa01.contentCollection.question.EasyQuestion;
-import cs3500.pa01.contentCollection.question.HardQuestion;
+import cs3500.pa01.contentcollection.NoteCollection;
+import cs3500.pa01.contentcollection.QuestionCollection;
+import cs3500.pa01.contentcollection.note.Note;
+import cs3500.pa01.contentcollection.question.EasyQuestion;
+import cs3500.pa01.contentcollection.question.HardQuestion;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,7 +57,7 @@ public class FileReader implements Reader {
         if (bracketEnd >= 0) {
           content += line.substring(bracketStart + 2, bracketEnd);
           if (content.contains(":::")) {
-            createQuestionCollectionFromMD(qc, content);
+            createQuestionCollectionFromMd(qc, content);
           } else {
             nc.add(new Note("[[]]", content.trim()));
           }
@@ -70,7 +70,7 @@ public class FileReader implements Reader {
         if (bracketEnd >= 0) {
           content += line.substring(0, bracketEnd);
           if (content.contains(":::")) {
-            createQuestionCollectionFromMD(qc, content);
+            createQuestionCollectionFromMd(qc, content);
           } else {
             nc.add(new Note("[[]]", content.trim()));
           }
@@ -91,7 +91,7 @@ public class FileReader implements Reader {
     }
   }
 
-  public void createQuestionCollectionFromMD(QuestionCollection qc, String content) {
+  public void createQuestionCollectionFromMd(QuestionCollection qc, String content) {
     int questionSeparatorStart = content.indexOf(":::");
 
     String question = content.substring(0, questionSeparatorStart).trim();

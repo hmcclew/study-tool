@@ -2,8 +2,8 @@ package cs3500.pa01.reader;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import cs3500.pa01.contentCollection.NoteCollection;
-import cs3500.pa01.contentCollection.QuestionCollection;
+import cs3500.pa01.contentcollection.NoteCollection;
+import cs3500.pa01.contentcollection.QuestionCollection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;

@@ -1,12 +1,17 @@
 package cs3500.pa01.controller;
 
-import cs3500.pa01.sessionWriter.InSessionWriter;
-import cs3500.pa01.sessionWriter.PostSessionWriter;
-import cs3500.pa01.sessionWriter.SessionSetupWriter;
+import cs3500.pa01.sessionwriter.InSessionWriter;
+import cs3500.pa01.sessionwriter.PostSessionWriter;
+import cs3500.pa01.sessionwriter.SessionSetupWriter;
 
-
+/**
+ * Class responsible for executing a study session
+ */
 public class StudySessionController implements Controller {
 
+  /**
+   * Handles running a study session
+   */
   public void run() {
     SessionSetupWriter sessionSetup = new SessionSetupWriter();
     sessionSetup.write();

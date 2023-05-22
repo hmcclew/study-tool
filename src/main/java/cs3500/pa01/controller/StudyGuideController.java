@@ -1,10 +1,10 @@
 package cs3500.pa01.controller;
 
-import cs3500.pa01.contentCollection.NoteCollection;
-import cs3500.pa01.contentCollection.QuestionCollection;
-import cs3500.pa01.fileWriter.FileWriter;
-import cs3500.pa01.fileWriter.MarkDownWriter;
-import cs3500.pa01.fileWriter.SRWriter;
+import cs3500.pa01.contentcollection.NoteCollection;
+import cs3500.pa01.contentcollection.QuestionCollection;
+import cs3500.pa01.filewriter.FileWriter;
+import cs3500.pa01.filewriter.MarkDownWriter;
+import cs3500.pa01.filewriter.SrWriter;
 import cs3500.pa01.reader.FileReader;
 import cs3500.pa01.sorter.FileSorter;
 import cs3500.pa01.sorter.Sorter;
@@ -16,6 +16,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Class responsible for creating a study guide
+ */
 public class StudyGuideController implements Controller {
   private final String inputPath;
   private final String orderingFlag;
@@ -34,6 +37,9 @@ public class StudyGuideController implements Controller {
     this.outputPath = Objects.requireNonNull(outputPath);
   }
 
+  /**
+   * Handles creating a study guide
+   */
   public void run() {
     Path directoryPath = Paths.get(inputPath);
     FileVisitor fileVisitor = new FileVisitor();
@@ -58,7 +64,7 @@ public class StudyGuideController implements Controller {
     }
 
     FileWriter markDownWriter = new MarkDownWriter();
-    FileWriter srWriter = new SRWriter();
+    FileWriter srWriter = new SrWriter();
     Path output = Paths.get(outputPath);
     markDownWriter.writeToFile(output, noteCollection.toString());
     srWriter.writeToFile(output, questionCollection.toString());
