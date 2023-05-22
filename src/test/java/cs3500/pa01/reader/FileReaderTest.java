@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import cs3500.pa01.contentcollection.NoteCollection;
 import cs3500.pa01.contentcollection.QuestionCollection;
+import cs3500.pa01.contentcollection.question.QuestionDifficulty;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;
@@ -70,5 +71,18 @@ class FileReaderTest {
     fr1.setPath(p2);
 
     assertEquals(p2, fr1.path);
+  }
+
+  @Test
+  public void testCreateQcFromMd() {
+    FileReader fr1 = new FileReader();
+    QuestionCollection qc = new QuestionCollection();
+    fr1.createQuestionCollectionFromMd(qc, "Question:::Answer");
+
+    assertEquals("Question", qc.getQuestionCollection().get(0).getQuestion());
+    assertEquals(QuestionDifficulty.HARD,
+        qc.getQuestionCollection().get(0).getQuestionDifficulty());
+    assertEquals("Answer", qc.getQuestionCollection().get(0).getAnswer());
+
   }
 }

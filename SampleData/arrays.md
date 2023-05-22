@@ -9,6 +9,7 @@
 
 - The above [[only creates a reference]] to an array object, but [[no array has
   actually been created yet]].
+- [[Question:::Answer]]
 
 ## Creating an Array (Instantiation)
 - [[General form:  arrayName = new type[numberOfElements];]]

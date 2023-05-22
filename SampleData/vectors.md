@@ -4,6 +4,7 @@
 ## Declaring a vector
 - [[General Form: Vector<type> v = new Vector();]]
 - Example: Vector<Integer> v = new Vector();
+- [[Question:::Answer]]
 
 - [[type needs to be a valid reference type]]
 

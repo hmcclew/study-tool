@@ -1,6 +1,5 @@
 package cs3500.pa01.sessionwriter;
 
-import java.nio.file.NoSuchFileException;
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;
 
