@@ -1,30 +1,6 @@
 Q HARD: What is 0 + 0
  A: 0
 
-Q HARD: What is 0 + 0
- A: 0
-
-Q HARD: What is 1 + 1
- A: 2
-
-Q HARD: What is 1 + 1
- A: 2
-
-Q HARD: What is 1 + 1
- A: 2
-
-Q HARD: What is 1 + 1
- A: 2
-
-Q HARD: What is 0 + 0
- A: 0
-
-Q HARD: What is 1 + 1
- A: 2
-
-Q HARD: What is 0 + 0
- A: 0
-
 Q HARD: What is 1 + 1
  A: 2
 
@@ -36,6 +12,9 @@ Q HARD: What is 1 + 1
 
 Q HARD: What is 1 + 1
  A: 2
+
+Q HARD: What is 0 + 0
+ A: 0
 
 Q HARD: What is 0 + 0
  A: 0
@@ -58,6 +37,12 @@ Q HARD: What is 0 + 0
 Q HARD: What is 0 + 0
  A: 0
 
+Q HARD: What is 1 + 1
+ A: 2
+
+Q HARD: What is 1 + 1
+ A: 2
+
 Q HARD: What is 0 + 0
  A: 0
 
@@ -67,11 +52,14 @@ Q HARD: What is 0 + 0
 Q HARD: What is 1 + 1
  A: 2
 
-Q HARD: What is 0 + 0
- A: 0
+Q HARD: What is 1 + 1
+ A: 2
 
 Q HARD: What is 1 + 1
  A: 2
+
+Q HARD: What is 0 + 0
+ A: 0
 
 Q HARD: What is 1 + 1
  A: 2
@@ -94,8 +82,23 @@ Q HARD: What is 0 + 0
 Q HARD: What is 1 + 1
  A: 2
 
-Q EASY: What is 4 + 2
- A: 6
+Q HARD: What is 0 + 0
+ A: 0
+
+Q HARD: What is 1 + 1
+ A: 2
+
+Q HARD: What is 0 + 0
+ A: 0
+
+Q HARD: What is 0 + 0
+ A: 0
+
+Q HARD: What is 1 + 1
+ A: 2
+
+Q EASY: What is 1 + 1
+ A: 2
 
 Q EASY: What is 4 + 2
  A: 6
@@ -106,101 +109,11 @@ Q EASY: What is 1 + 1
 Q EASY: What is 2 + 2
  A: 4
 
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 1 + 1
- A: 2
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 1 + 1
- A: 2
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
 Q EASY: What is 2 + 2
  A: 4
 
 Q EASY: What is 1 + 1
  A: 2
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 4 + 2
- A: 6
 
 Q EASY: What is 1 + 1
  A: 2
@@ -220,6 +133,66 @@ Q EASY: What is 0 + 0
 Q EASY: What is 1 + 1
  A: 2
 
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 1 + 1
+ A: 2
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
 Q EASY: What is 2 + 2
  A: 4
 
@@ -229,8 +202,8 @@ Q EASY: What is 4 + 2
 Q EASY: What is 0 + 0
  A: 0
 
-Q EASY: What is 4 + 2
- A: 6
+Q EASY: What is 2 + 2
+ A: 4
 
 Q EASY: What is 2 + 2
  A: 4
@@ -244,71 +217,17 @@ Q EASY: What is 4 + 2
 Q EASY: What is 1 + 1
  A: 2
 
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
 Q EASY: What is 2 + 2
  A: 4
 
 Q EASY: What is 1 + 1
  A: 2
 
-Q EASY: What is 0 + 0
- A: 0
-
 Q EASY: What is 2 + 2
  A: 4
 
 Q EASY: What is 4 + 2
  A: 6
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 4 + 2
- A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 0 + 0
- A: 0
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
 
 Q EASY: What is 0 + 0
  A: 0
@@ -316,29 +235,8 @@ Q EASY: What is 0 + 0
 Q EASY: What is 1 + 1
  A: 2
 
-Q EASY: What is 1 + 1
- A: 2
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
 Q EASY: What is 4 + 2
  A: 6
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
-
-Q EASY: What is 2 + 2
- A: 4
 
 Q EASY: What is 0 + 0
  A: 0
@@ -355,8 +253,50 @@ Q EASY: What is 4 + 2
 Q EASY: What is 2 + 2
  A: 4
 
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 0 + 0
+ A: 0
+
 Q EASY: What is 1 + 1
  A: 2
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 0 + 0
+ A: 0
 
 Q EASY: What is 1 + 1
  A: 2
@@ -370,8 +310,50 @@ Q EASY: What is 4 + 2
 Q EASY: What is 4 + 2
  A: 6
 
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
 Q EASY: What is 1 + 1
  A: 2
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
 
 Q EASY: What is 0 + 0
  A: 0
@@ -381,4 +363,34 @@ Q EASY: What is 2 + 2
 
 Q EASY: What is 4 + 2
  A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 4 + 2
+ A: 6
+
+Q EASY: What is 1 + 1
+ A: 2
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 0 + 0
+ A: 0
+
+Q EASY: What is 1 + 1
+ A: 2
+
+Q EASY: What is 2 + 2
+ A: 4
+
+Q EASY: What is 2 + 2
+ A: 4
 

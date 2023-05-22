@@ -1,14 +1,11 @@
 package cs3500.pa01.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-
-import cs3500.pa01.sessionwriter.InSessionWriter;
-import cs3500.pa01.sessionwriter.PostSessionWriter;
-import cs3500.pa01.sessionwriter.SessionSetupWriter;
 import java.io.ByteArrayInputStream;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class to test the methods for StudySessionController
+ */
 class StudySessionControllerTest {
 
   @Test

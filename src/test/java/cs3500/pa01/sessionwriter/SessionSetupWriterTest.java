@@ -1,13 +1,15 @@
 package cs3500.pa01.sessionwriter;
 
-import java.util.NoSuchElementException;
-import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayInputStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.ByteArrayInputStream;
+import java.util.NoSuchElementException;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Class to test the methods for SessionSetupWriter
+ */
 public class SessionSetupWriterTest {
 
   @Test

@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class to test the methods for EasyQuestion
+ */
 class EasyQuestionTest {
 
   @Test

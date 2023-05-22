@@ -9,6 +9,9 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class to test the methods for QuestionCollection
+ */
 class QuestionCollectionTest {
 
   private ArrayList<HardQuestion> hardQuestions;
@@ -20,7 +23,7 @@ class QuestionCollectionTest {
   private EasyQuestion easyQuestion1;
   private EasyQuestion easyQuestion2;
 
-  QuestionCollection QC;
+  QuestionCollection questionCollectionC;
 
   @BeforeEach
   void setUp() {
@@ -30,27 +33,27 @@ class QuestionCollectionTest {
     easyQuestion2 = new EasyQuestion("What is 1 + 1", "2");
     hardQuestions = new ArrayList<>(Arrays.asList(hardQuestion1, hardQuestion2));
     easyQuestions = new ArrayList<>(Arrays.asList(easyQuestion1, easyQuestion2));
-    QC = new QuestionCollection(hardQuestions, easyQuestions, 4);
+    questionCollectionC = new QuestionCollection(hardQuestions, easyQuestions, 4);
   }
 
   @Test
   void testToString() {
-    String qcToString = QC.toString();
+    String qcToString = questionCollectionC.toString();
 
     System.out.print(qcToString);
   }
 
   @Test
   public void testChangeDifficulty() {
-    QC.changeQuestionDifficulty(hardQuestion1);
+    questionCollectionC.changeQuestionDifficulty(hardQuestion1);
 
-    assertEquals(3, QC.easyQuestions.size());
-    assertEquals(1, QC.hardQuestions.size());
+    assertEquals(3, questionCollectionC.easyQuestions.size());
+    assertEquals(1, questionCollectionC.hardQuestions.size());
 
-    QC.changeQuestionDifficulty(easyQuestion1);
+    questionCollectionC.changeQuestionDifficulty(easyQuestion1);
 
-    assertEquals(2, QC.easyQuestions.size());
-    assertEquals(2, QC.hardQuestions.size());
+    assertEquals(2, questionCollectionC.easyQuestions.size());
+    assertEquals(2, questionCollectionC.hardQuestions.size());
   }
 
 }

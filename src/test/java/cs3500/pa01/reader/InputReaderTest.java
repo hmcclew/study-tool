@@ -1,6 +1,7 @@
 package cs3500.pa01.reader;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import cs3500.pa01.contentcollection.QuestionCollection;
 import cs3500.pa01.contentcollection.question.EasyQuestion;
@@ -10,6 +11,9 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class to test the methods for InputReader
+ */
 class InputReaderTest {
 
   InputReader ip;
@@ -24,7 +28,8 @@ class InputReaderTest {
     EasyQuestion easyQuestion2 = new EasyQuestion("What is 1 + 1", "2");
     ArrayList<HardQuestion>
         hardQuestions = new ArrayList<>(Arrays.asList(hardQuestion1, hardQuestion2));
-    ArrayList<EasyQuestion> easyQuestions = new ArrayList<>(Arrays.asList(easyQuestion1, easyQuestion2));
+    ArrayList<EasyQuestion> easyQuestions = new ArrayList<>(Arrays.asList(easyQuestion1,
+        easyQuestion2));
     qc = new QuestionCollection(hardQuestions, easyQuestions, 10);
     ip = new InputReader(qc);
   }

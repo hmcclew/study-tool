@@ -1,6 +1,7 @@
 package cs3500.pa01.updater;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import cs3500.pa01.contentcollection.QuestionCollection;
 import cs3500.pa01.contentcollection.question.EasyQuestion;
@@ -22,11 +23,14 @@ class SessionStatisticsUpdaterTest {
     HardQuestion hardQuestion2 = new HardQuestion("What is 4 + 2", "6");
     EasyQuestion easyQuestion1 = new EasyQuestion("What is 0 + 0", "0");
     EasyQuestion easyQuestion2 = new EasyQuestion("What is 1 + 1", "2");
-    ArrayList<HardQuestion> hardQuestions = new ArrayList<>(Arrays.asList(hardQuestion1, hardQuestion2));
-    ArrayList<EasyQuestion> easyQuestions = new ArrayList<>(Arrays.asList(easyQuestion1, easyQuestion2));
+    ArrayList<HardQuestion> hardQuestions =
+        new ArrayList<>(Arrays.asList(hardQuestion1, hardQuestion2));
+    ArrayList<EasyQuestion> easyQuestions =
+        new ArrayList<>(Arrays.asList(easyQuestion1, easyQuestion2));
     qc = new QuestionCollection(hardQuestions, easyQuestions, 4);
     sst = new SessionStatisticsUpdater(qc);
   }
+
   @Test
   public void testTrackStatistics() {
     sst.incrementEasyToHard();

@@ -50,7 +50,7 @@ class FileReaderTest {
   }
 
   @Test
-  public void testCreateQCFromSR() {
+  public void testCreateQcFromSr() {
     Path p1 = Paths.get("TestFiles", "Test3.sr");
     FileReader fr1 = new FileReader();
     fr1.read(p1.toString());

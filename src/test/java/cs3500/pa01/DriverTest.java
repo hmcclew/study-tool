@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class to test the Driver for Pa02
+ */
 class DriverTest {
 
   @Test
