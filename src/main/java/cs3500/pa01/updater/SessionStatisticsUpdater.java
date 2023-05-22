@@ -31,8 +31,8 @@ public class SessionStatisticsUpdater {
   /**
    * Formats the session statistics to be displayed to a user
    *
-   * @return the final string of session statistics to be displayed to the user
-   * at the end of a session
+   * @return the final string of session statistics to be displayed to the user at the end of
+   * a session
    */
   public String printStatistics() {
     return "You answered " + numAnswered + " questions. \n"

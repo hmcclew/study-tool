@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Handles Writing to the user during a Study Session
  */
-public class InSessionWriter implements Writer {
+public class InSessionWriter implements SessionWriter {
   protected QuestionCollection qc1;
   public InputReader inputReader;
 

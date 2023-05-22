@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Handles writing to the user to set up a study session
  */
-public class SessionSetupWriter implements Writer {
+public class SessionSetupWriter implements SessionWriter {
   public QuestionCollection qc1 = new QuestionCollection();
   public QuestionCollection qc2 = new QuestionCollection();
   public String filePath;

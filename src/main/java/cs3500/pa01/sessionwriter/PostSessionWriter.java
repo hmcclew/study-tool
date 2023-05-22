@@ -10,7 +10,7 @@ import java.nio.file.Path;
 /**
  * Writes Post Session Results and Writes updates to Question File
  */
-public class PostSessionWriter implements Writer {
+public class PostSessionWriter implements SessionWriter {
   public QuestionCollection qc1;
   public QuestionCollection qc2;
   public String filePath;
