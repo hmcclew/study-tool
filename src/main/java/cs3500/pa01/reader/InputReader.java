@@ -81,7 +81,6 @@ public class InputReader implements Reader {
       System.out.println("Answer: " + currentQuestion.getAnswer());
     } else if (userInput.trim().equals(UserInput.FOUR.getValue())) {
       System.exit(0);
-      statisticsUpdater.printStatistics();
     } else {
       String nextLine = scanner.nextLine();
       read(nextLine);
